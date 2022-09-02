@@ -1,12 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сдаётся</title>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
-<body>
-  Сдается
+
+<body class="rented-page">
+  <section class="rented-screen">
+    <div class="rented__outside-wrap">
+      <a href="../index.html" class="rented__prev-btn">
+        Вернуться назад
+      </a>
+      <div class="home__contacts-wrapper">
+        <div class="home__contacts">
+          <button class="home__contacts-city">
+            Санкт-Петербург
+          </button>
+          <button class="home__contacts-city2">
+            / Москва
+          </button>
+          <a href="tel:+79217894844" class="home__contacts-phone">+7 (921) 789 48 44</a>
+          <div class="home__contacts-social">
+            <a href="#" class="home__contacts-vk">
+              <img src="/img/vk.svg" alt="vk" class="home__contacts-vk-img">
+            </a>
+            <a href="#" class="home__contacts-tg">
+              <img src="/img/tg.svg" alt="tg" class="home__contacts-tg-img">
+            </a>
+            <a href="#" class="home__contacts-skype">
+              <img src="/img/skype.svg" alt="vk" class="home__contacts-skype-img">
+            </a>
+            <a href="#" class="home__contacts-viber">
+              <img src="/img/viber.svg" alt="vk" class="home__contacts-viber-img">
+            </a>
+            <a href="#" class="home__contacts-watsapp">
+              <img src="/img/whatsapp.svg" alt="viber" class="home__contacts-watsapp-img">
+            </a>
+            <a href="#" class="home__contacts-email">
+              <img src="/img/email.svg" alt="email" class="home__contacts-email-img">
+            </a>
+          </div>
+        </div>
+        <button class="home__contacts-call">Обратный звонок</button>
+      </div>
+    </div>
+    <div class="rented__inside-wrap">
+      <h1 class="rented-screen__title">
+        Взыскание расходов на устранение
+        недостатков квартиры
+      </h1>
+      <p class="rented-screen__text">
+        Результаты нашей работы
+      </p>
+      <div class="rented-screen__result-list">
+        <div class="rented-screen__result-item1">
+          <p class="rented-screen__result-title">I</p>
+          <p class="rented-screen__result-text">
+            Уменьшение цены покупки квартиры на стоимость устранения недостатков объекта долевого строительства
+          </p>
+        </div>
+        <div class="rented-screen__result-item2">
+          <p class="rented-screen__result-title">II</p>
+          <p class="rented-screen__result-text">
+            Неустойка за просрочку удовлетворения требования потребителя о соразмерном уменьшении цены
+          </p>
+        </div>
+        <div class="rented-screen__result-item3">
+          <p class="rented-screen__result-title">III</p>
+          <p class="rented-screen__result-text">
+            Штрафные санкции для застройщика
+          </p>
+        </div>
+        <div class="rented-screen__result-item4">
+          <p class="rented-screen__result-title">IV</p>
+          <p class="rented-screen__result-text">
+            Компенсация морального ущерба
+          </p>
+        </div>
+        <div class="rented-screen__result-item5">
+          <p class="rented-screen__result-title">V</p>
+          <p class="rented-screen__result-text">
+            Возмещение расходов на проведение экспертизы
+          </p>
+        </div>
+        <div class="rented-screen__result-item6">
+          <p class="rented-screen__result-title">VI</p>
+          <p class="rented-screen__result-text">
+            Компенсация расходов на оплату услуг представителя в судебном процессе
+          </p>
+        </div>
+      </div>
+      <button class="home-info__call">Свяжитесь с нами</button>
+      <p class="home-info__call-text">
+        чтобы <span class="home-info__call-free">бесплатно </span>обсудить Вашу ситуацию и получить
+        профессиональную консультацию от наших юристов
+      </p>
+    </div>
+
+    <!-- Modal consultation -->
+    <div class="consultation-popup-bg">
+      <div class="consultation-popup">
+        <div class="consultation__header">
+          <p class="consultation__title">Как Вам удобнее взаимодействовать?</p>
+          <button class="consultation-close-btn"></button>
+        </div>
+        <div class="consultation__wrapper">
+          <div class="consultation__column">
+            <p class="consultation__feedback">
+              Обратная связь
+            </p>
+            <p class="consultation__feedback-text">
+              Вы можете <button class="consultation__feedback-text-link">написать</button> нам в форме обратной связи
+            </p>
+            <p class="consultation__office">Офис</p>
+            <p class="consultation__office-text">
+              Расположение нашего офиса в Санкт-Петербурге Вы можете посмотреть на <a href=""
+                class="consultation__office-text-link">карте</a>
+            </p>
+            <p class="consultation__number">Номера телефонов</p>
+            <div class="consultation__number-wrap">
+              <div class="consultation__number-spb-wrap">
+                <p class="consultation__number-spb-title">
+                  Санкт-Петербург
+                </p>
+                <a href="tel:+79117294090" class="consultation__number-spb">+7 (911) 729-40-90</a>
+              </div>
+              <div class="consultation__number-msk-wrap">
+                <p class="consultation__number-msk-title">
+                  Москва
+                </p>
+                <a href="tel:+79117294090" class="consultation__number-msk">+7 (911) 729-40-90</a>
+              </div>
+
+            </div>
+          </div>
+          <div class="consultation__column">
+            <p class="consultation__messengers">
+              Онлайн мессенджеры
+            </p>
+            <p class="consultation__messengers-text">
+              Вы можете задать вопрос в формате чата
+            </p>
+            <div class="consultation__messengers-wrap">
+              <a href="#" class="consultation__messengers-vk">Вконтакте</a>
+              <a href="#" class="consultation__messengers-tg">Telegram</a>
+              <a href="#" class="consultation__messengers-wa">WhatsApp</a>
+              <a href="#" class="consultation__messengers-vb">Viber</a>
+              <a href="#" class="consultation__messengers-sk">Skype</a>
+            </div>
+          </div>
+          <div class="consultation__column">
+            <p class="consultation__feedback-call">Обратный звонок</p>
+            <p class="consultation__feedback-call-text"><button
+                class="consultation__feedback-call-btn">Закажите</button>
+              обратный звонок и мы Вам перезвоним</p>
+            <p class="consultation__email">Электропочта</p>
+            <p class="consultation__email-text">Напишите на нашу почту <a href="#"
+                class="consultation__email-link">info@pravo-resheniya.ru</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/main.js"></script>
 </body>
+
 </html>
