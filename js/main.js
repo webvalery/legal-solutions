@@ -36,15 +36,44 @@ consulOpenPopupBtn.addEventListener('click', (event) => {
   event.preventDefault();
   consulPopupBg.classList.add('active');
   consulPopup.classList.add('active');
+  consulPopup.style.transition = '0s';
+  consulPopupAdaptive();
 })
 consulClosePopupBtn.addEventListener('click', (event) => {
   event.preventDefault();
   consulPopupBg.classList.remove('active');
   consulPopup.classList.remove('active');
+  consulPopup.style.transition = '1s';
 })
 document.addEventListener('click', (event) => {
   if (event.target === consulPopupBg) {
     consulPopupBg.classList.remove('active');
     consulPopup.classList.remove('active');
+    consulPopup.style.transition = '1s';
   }
 })
+
+// Адаптив модального окна консультации
+let screenHeight = window.screen.height;
+let consulPopupHeight = consulPopup.offsetHeight;
+consulPopupAdaptive();
+window.addEventListener('resize', (event) => {
+  consulPopupHeight = consulPopup.offsetHeight;
+  screenHeight = window.screen.height;
+  consulPopupAdaptive();
+})
+
+function consulPopupAdaptive() {
+  if (consulPopup.classList.contains('active') & screenHeight < consulPopupHeight) {
+    consulPopupBg.style.position = 'absolute';
+    consulPopup.style.transform = 'translate(-50%, -26%) scale(1)';
+    window.scrollTo(0, 0);
+  }
+  if (window.screen.width <= 811 && window.screen.width >= 670) {
+    consulPopup.style.maxWidth = `661px`;
+  }
+  if (window.screen.width <= 661) {
+    consulPopup.style.maxWidth = `350px`;
+  }
+}
+

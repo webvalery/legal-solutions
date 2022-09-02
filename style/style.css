@@ -54,6 +54,8 @@ a {
   display: flex;
   justify-content: flex-end;
   padding-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .home__contacts {
@@ -116,6 +118,7 @@ a {
   background-color: transparent;
   border-radius: 5px;
   color: #F2D955;
+  cursor: pointer;
 }
 
 .home-logo__img {
@@ -132,7 +135,7 @@ a {
   max-width: 640px;
   color: #FFEEE2;
   text-shadow: 1px 1px 0px #000000;
-  margin-bottom: 100px;
+  margin-bottom: 45px;
 }
 
 .home-info__status-ask {
@@ -260,6 +263,7 @@ a {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 5px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .home-info__call-text {
@@ -292,17 +296,19 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.7);
 
   transition: 1s;
   opacity: 0;
   pointer-events: none;
 }
+
 .consultation-popup-bg.active {
   opacity: 1;
   pointer-events: all;
   transition: 1s;
 }
+
 .consultation-popup {
   max-width: 890px;
   background: linear-gradient(104deg, rgba(97, 56, 56, 0.2) 0%, rgba(33, 30, 30, 0.2) 35.21%, rgba(97, 56, 56, 0.2) 100%),
@@ -314,21 +320,27 @@ a {
   transform: translate(-50%, -50%) scale(0);
   padding: 20px;
   transition: 1s;
+  position: relative;
 }
+
 .consultation-popup.active {
   transform: translate(-50%, -50%) scale(1);
 }
+
 .consultation__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
+
 .consultation__title {
   font-size: 24px;
   color: #111111;
   font-family: 'literata-bold';
   font-weight: bolder;
-  margin-bottom: 20px;
 }
+
 .consultation-close-btn {
   cursor: pointer;
   width: 40px;
@@ -336,11 +348,16 @@ a {
   background: url('../img/popup-close.svg');
   border: none;
   transition: 0.5s;
+  padding: 0 10px;
+  margin-right: 10px;
 }
-.consultation-close-btn:hover {
+
+.consultation-close-btn:hover,
+.consultation-close-btn:focus {
   background-color: #fff;
   border-radius: 50%;
 }
+
 .consultation__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -433,15 +450,25 @@ a {
   left: -3px;
 }
 
-.consultation__number-text {
+.consultation__number-spb-wrap,
+.consultation__number-msk-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  margin-bottom: 10px;
+}
+
+.consultation__number-spb-title,
+.consultation__number-msk-title {
   color: #111111;
   font-weight: bold;
-  margin-bottom: 10px;
-  max-width: 260px;
+  max-width: 261px;
+  margin-right: 10px;
 }
 
 .consultation__number-spb,
 .consultation__number-msk {
+  font-weight: bolder;
   color: #111;
   border-bottom: 1px solid #613838;
 }
@@ -599,7 +626,33 @@ a {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .consultation__email-link {
   color: #613838;
   border-bottom: 1px solid #613838;
+}
+
+/* Медиа для модального окна консультации */
+@media (max-width: 670px) {
+  .consultation__title {
+    font-size: 20px;
+  }
+  .consultation__number-msk-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-info__call-text {
+    margin-bottom: 30px;
+  }
+}
+
+/* Адаптив шапки */
+@media (max-width: 550px) {
+  .home__contacts-wrapper {
+    justify-content: center;
+  }
+  .home__contacts {
+    display: flex;
+    flex-direction: column;
+  }
 }
