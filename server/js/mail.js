@@ -22,14 +22,14 @@ class Mail {
     })
   }
 
-  async send(reciever, message) {
+  async send(name, phone, time) {
     try {
       const info = await this.#transporter.sendMail({
         from: 'valeractar@mail.ru',
         to: 'valeractar@mail.ru',
-        subject: 'Welcome to TEST SITE',
-        text: message,
-        html: `<b>${message}</b>`
+        subject: 'Заявка на ОБРАТНЫЙ ЗВОНОК',
+        text: 'Сообщение в поле text',
+        html: `<b>Имя: ${name} <br>Номер телефона: ${phone}<br>Время: ${time}</br>`
       })
       return info.messageId
     } catch (error) {

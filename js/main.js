@@ -31,14 +31,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Модальное окно КОНСУЛЬТАЦИЯ
 let consulPopupBg = document.querySelector('.consultation-popup-bg');
 let consulPopup = document.querySelector('.consultation-popup');
-let consulOpenPopupBtn = document.querySelector('.home-info__call');
+let consulOpenPopupBtn = document.querySelectorAll('.home-info__call');
 let consulClosePopupBtn = document.querySelector('.consultation-close-btn');
 let btnConsulFeedbackCall = document.querySelector('.consultation__feedback-call-btn');
 
-consulOpenPopupBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  consulOpenPopup();
-})
+consulOpenPopupBtn.forEach((consulOpenPopupBtn) => {
+  consulOpenPopupBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    consulOpenPopup();
+  })
+});
+
 
 consulClosePopupBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -141,9 +144,30 @@ function closeBackCallModal() {
 async function backCallFormSend(event) {
   event.preventDefault();
   let error = formValidate(backCallForm);
-
+  
+  let formData = new FormData(backCallForm);
+  let formDataObject = Object.fromEntries(formData.entries());
+  let formDataObjectJSON = JSON.stringify(formDataObject); 
+  console.log(formDataObjectJSON);
   if (error === 0) {
-
+    backCallModal.classList.add('_sending');
+    let response = await fetch('http://127.0.0.1:3001/mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      },
+      body: formDataObjectJSON,
+    });
+    if(response.ok){
+      let result = await response.json();
+      console.log(result);
+      backCallForm.reset();
+      backCallModal.classList.remove('_sending');
+      closeBackCallModal();
+    } else {
+      alert('Неизвестная ошибка. Форма не отправлена. Попробуйте снова');
+      backCallModal.classList.remove('_sending');
+    }
   } else {
     alert('Заполните все обязательные поля');
   }
@@ -189,3 +213,4 @@ function testFormPhone(phone) {
   let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
   return regex.test(phone);
 }
+

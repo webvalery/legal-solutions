@@ -167,16 +167,16 @@
         </div>
         <form action="" id="back-call-form" class="back-call-modal__form">
           <div class="back-call-modal__form-name-wrap">
-            <label for="back-call-name" class="back-call-modal__form-name">Имя</label>
-            <input type="text" class="back-call-modal__form-name-input _req" id="back-call-name" placeholder="Как к Вам обращаться?">
+            <label for="back-call-name" class="back-call-modal__form-name" name="nametitle">Имя</label>
+            <input type="text" class="back-call-modal__form-name-input _req" id="back-call-name" placeholder="Как к Вам обращаться?" name="name">
           </div>
           <div class="back-call-modal__form-phone-wrap">
-            <label for="back-call-phone" class="back-call-modal__form-phone">Телефон</label>
-            <input type="tel" class="back-call-modal__form-phone-input _req _number" id="back-call-phone" placeholder="+7 ( ___ ) ___-__-__">
+            <label for="back-call-phone" class="back-call-modal__form-phone" name="phone-title">Телефон</label>
+            <input type="tel" class="back-call-modal__form-phone-input _req _number" id="back-call-phone" placeholder="+7 ( ___ ) ___-__-__" name="phone">
           </div> 
           <div class="back-call-modal__form-time-wrap">
-            <label for="back-call-time" class="back-call-modal__form-time">Время</label>
-            <input type="time" class="back-call-modal__form-time-input" id="back-call-time">
+            <label for="back-call-time" class="back-call-modal__form-time" name="timeTitle">Время</label>
+            <input type="datetime-local" class="back-call-modal__form-time-input" id="back-call-time" name="time">
           </div>
           <div class="back-call-modal__form-agreement-wrap">
             <input type="checkbox" checked class="back-call-modal__form-agreement _req" id="back-call-agreement">
