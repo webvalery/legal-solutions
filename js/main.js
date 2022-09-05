@@ -83,15 +83,8 @@ window.addEventListener('resize', (event) => {
 
 function consulPopupAdaptive() {
   if (consulPopup.classList.contains('active') & screenHeight < consulPopupHeight) {
-    let documentHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-    consulPopupBg.style.height = `${documentHeight}px`;
-    consulPopupBg.style.position = 'absolute';
-    consulPopup.style.transform = 'translate(-50%, -70%) scale(1)';
-    window.scrollTo(0, 0);
+    consulPopup.style.top = '50%';
+    consulPopup.style.transform = 'translate(-50%, 0%) scale(1)';
   }
   if (window.screen.width <= 811 && window.screen.width >= 670) {
     consulPopup.style.maxWidth = `661px`;
